@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Tab Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script> <!--sweetalert script-->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>  <!--sweetalert link-->
+    <script src="https://kit.fontawesome.com/48945a5e3d.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+            background-color: rgba(255, 246, 204, 0.5);
+        }
+        ul.link-wapper {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul.link-wapper li {
+            display: inline-block;
+            padding: 20px;
+        }
+        ul.link-wapper li a.active{
+            color: white;
+            font-size: 22px;
+            text-shadow: 1px 1px 1px black, 0 0 1.5em #93e593, 0 0 0.5em darkgreen;
+        }
+
+
+        ul.link-wapper li a{
+            text-decoration: none;
+            color: #93e593;
+        }
+        div.content {
+            max-width: 800px;
+            background-color: #93e593;
+            padding: 20px 50px;
+            margin: 0 auto 10px;
+            display: none;
+        }
+        div.shop{
+            display: grid;
+            grid-template-columns: auto auto;
+            height: 300px;
+        }
+        div.item{
+            border: 3px outset grey;
+            background-image: linear-gradient(to right bottom, white, #93e593);
+            padding: 40px 80px;
+            margin: 20px;
+            color: grey;
+            border-radius: 10px;
+        }
+        div.item img{
+            height: 200px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        div.item:hover{
+            box-shadow: 10px 10px 10px;
+        }
+        div.item:hover>img{
+            transform: scale(1.1);
+        }
+        div.item:hover>.atc{
+            box-shadow: 5px 5px 5px grey;
+        }
+        button.atc{
+            margin-top: 15px;
+            padding: 15px;
+            color: darkgreen;
+            font-size: 18px;
+            border-radius: 30px;
+        }
+
+        div#final{
+            margin-left: 400px;
+        }
+
+        div#totalGrid{
+            display: grid;
+            grid-template-columns: auto auto;
+            margin-top: -40px;
+        }
+
+        h2#total{
+            margin-top: 25px;
+            margin-left: 130px;
+        }
+
+        p#line{
+            margin-top: -20px;
+        }
+        div#cart_btn{
+            position: relative;
+        }
+        div#cart_item{
+            position: absolute;
+            background-color: gold;
+            top: -18px;
+            left: 28px;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: small;
+            color: white;
+        }
+        i#trash{
+            padding: 3px;
+            cursor: pointer;
+            border-color: grey;
+        }
+        button.remove{
+            border-radius: 30%;
+            background-image: linear-gradient(to right bottom, white, #93e593);
+        }
+        button.remove:hover{
+            box-shadow: 2px 2px 2px grey;
+            background-image: linear-gradient(to right bottom, #93e593, white);
+        }
+        button i#addCart{
+            padding-right: 10px;
+            color: darkgreen;
+        }
+        button.checkout{
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 15px;
+            background-image: linear-gradient(to right bottom, white, #93e593);
+        }
+        button.checkout:hover{
+            box-shadow: 2px 2px 2px grey;
+            background-image: linear-gradient(to right bottom, #93e593, white);
+        }
+        /* Home */
+        div.home_grid{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        div.home_grid img{
+            border-radius: 8px;
+            width: 100%;
+            height: 250px;
+            padding-top: 30px;
+        }
+        div.home_text{
+            width: 80%;
+            text-align: justify;
+            margin-top: 20px;
+            margin-left: 80px;
+        }
+        div.home_text h2{
+            line-height: 25px;
+        }
+        div.home_text p{
+            line-height: 28px;
+        }
+        div.home_text button{
+            padding: 10px;
+            border-radius: 8px;
+            background-image: linear-gradient(to right bottom, white, #93e593);
+        }
+        div.home_text button:hover{
+            box-shadow: 4px 4px 4px grey;
+        }
+        /* contact */
+
+        div.background_color {
+            background-image: linear-gradient(to right bottom, white, #93e593);
+            height: 1050px;
+        }
+
+        div h1.center {
+            text-align: center;
+            color: gold;
+            padding: 40px 0;
+            font-size: 35px;
+        }
+
+        div.contact_grid {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        div.contact_grid .contact_grid_one,
+        div.contact_grid .contact_grid_two,
+        div.contact_grid .contact_grid_three {
+            text-align: left;
+            padding-left: 45px;
+        }
+
+        div.contact_grid_one h2,
+        div.contact_grid_two h2,
+        div.contact_grid_three h2 {
+            margin-top: -20px;
+            margin-bottom: 10px;
+        }
+
+        div.contact_grid_one p,
+        div.contact_grid_two a,
+        div.contact_grid_three p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        div.contact_grid_two a:hover {
+            color: gold;
+        }
+
+        .gray {
+            color: gray;
+        }
+
+        div.contact_border {
+            position: relative;
+            top: 50px;
+            left: 120px;
+            border: 3px solid gold;
+            width: 70%;
+            height: 700px;
+            box-shadow: 15px 15px 15px rgb(38, 43, 39);
+            margin-bottom: 20px;
+        }
+
+        div.contact_border .contact_border_header {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 25px;
+        }
+
+        div.contact_border .contact_border_icons {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.7em;
+        }
+
+        div.contact_border_icons .contact_border_icontwo,
+        div.contact_border_icons .contact_border_iconthree {
+            margin-left: 40px;
+        }
+
+        .lightgray {
+            color: rgb(196, 193, 193);
+        }
+
+        div.contact_border_icons .contact_border_iconone:hover,
+        div.contact_border_icons .contact_border_icontwo:hover,
+        div.contact_border_icons .contact_border_iconthree:hover {
+            color: gold;
+        }
+
+        div.contact_form {
+            position: relative;
+            top: 30px;
+            left: 60px;
+        }
+
+        div.contact_form .contact_form_size {
+            width: 70%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid gold;
+        }
+
+        div.contact_form .contact_form_margin {
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        div.contact_form .contact_form_button {
+            margin-top: 30px;
+            margin-left: 250px;
+            padding: 10px;
+            font-size: 18px;
+            background-color: gold;
+            border: 1px solid gold;
+            color: white;
+        }
+
+        div.contact_form .contact_form_button:hover {
+            color: gold;
+            background-color: white;
+            box-shadow: 0 0 50px gold;
+            transition-duration: 0.8s;
+        }
+
+        div.contact_form .contact_form_size:hover {
+            box-shadow: 0 0 15px gold;
+            transition-duration: 0.3s;
+        }
+
+        div.contact_form .contact_form_size:focus {
+            outline: none;
+            box-shadow: 0 0 15px gold;
+        }
+
+        /* About */
+
+        div.about_us{
+            margin-top: 50px;
+            border: 3px inset gold;
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        div.about_us .about_us_1{ 
+            border-right: 1px inset rgb(187, 186, 186);
+        }
+
+        div.about_us .about_us_color{
+            background-image: linear-gradient(to right bottom, white, #93e593);
+            padding: 10px 20px;
+            text-align: justify;
+            height: 400px;
+        }
+
+        div.about_us .about_us_color h3{
+            color: gold;
+            font-family: Great_Vibes;
+            font-size: 30px;
+        }
+
+        div.about_us .about_us_color h1{
+            color: black;
+    
+        }
+
+        div.about_us .about_us_color p{
+            color: gray;
+            margin-top: 15px;
+            text-indent: 30px;
+        }
+
+        div.about_us .about_us_color a{
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: gold;
+            letter-spacing: 5px;
+        }
+
+        div.about_us .about_us_color:hover{
+            background-image: linear-gradient(to right bottom, #93e593, white);
+            transition-duration: 0.5s;
+        }
+
+        div.about_us .about_us_color:hover>h1{
+            color: gold;
+            transition-duration: 0.5s;
+        }
+
+        div.about_us .about_us_color:hover>h3{
+            color: black;
+            transition-duration: 0.5s;
+        }
+
+        div.about_us .about_us_color:hover>p{
+            color: gray;
+            transition-duration: 0.5s;
+        }
+
+        div.about_us .about_us_color:hover>.decoration{
+            border-bottom: 1px solid white;
+            color: white;
+            font-weight: bold;
+            padding: 0 10px 5px 0px;
+        }
+
+        div.about_purpose_text{
+            text-align: justify;
+            
+        }
+
+        div.about_purpose_text h1{
+            color: White;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 3px black;
+        }
+
+        div.about_purpose_text p{
+            color: white;
+            text-indent: 50px;
+            line-height: 35px;
+        }
+
+        /* Shop */
+        ul.shop-wapper {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul.shop-wapper li {
+            display: inline-block;
+            padding: 20px;
+        }
+        ul.shop-wapper li a.active{
+            color: #93e593;
+            border: 1px outset white;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 30px;
+        }
+
+        ul.shop-wapper li a{
+            text-decoration: none;
+            color: white;
+        }
+        div.shopcontent {
+            display: none;
+        }
+        
+    </style>
+
+    <script src="jquery.min.js"></script>
+    <script>
+        
+        $(function(){ 
+            
+            $('.content').first().slideDown();
+
+            $('ul.link-wapper li a').on('click',function(event){
+                var current_tab = $(this);
+                $('ul.link-wapper li a').removeClass('active') // all <a>
+                current_tab.addClass("active")
+
+                $('.content').slideUp()
+                current_tab_href = current_tab.attr('href') // #home
+                $(current_tab_href).slideDown();  // $('#home')
+
+                if("ul.link-wapper li a#shop"){
+                    $('ul.shop-wapper li a').removeClass('active') // all <a>
+                    $('ul.shop-wapper li a#pizzapage').addClass("active")
+                    $('.shopcontent').first().slideDown()
+                }
+
+                event.preventDefault();
+            })
+
+            // Shop content
+
+            $('ul.shop-wapper li a').on('click',function(event){
+                var current_tab = $(this);
+                $('ul.shop-wapper li a').removeClass('active') // all <a>
+                current_tab.addClass("active")
+
+                $('.shopcontent').fadeOut()
+                current_tab_href = current_tab.attr('href') // #home
+                $(current_tab_href).fadeIn();  // $('#home')
+
+                event.preventDefault();
+            })
+
+    
+            //Local Storage
+
+            $('.atc').on("click",function(){
+                let id = $(this).data('id');
+                let name = $(this).data('name');
+                let price = $(this).data('price');
+                let item = {
+                    id : id,
+                    name: name,
+                    price:price,
+                    qty: 1
+                }
+                //console.log(typeof item.qty)
+                let cart = localStorage.getItem('cart');
+                // let myArr = [];
+                // if(cart != null){
+                //     myArr = JSON.parse(cart);
+                // }
+                
+                let myArr = '';
+                if(cart != null){
+                    myArr = JSON.parse(cart);
+                }else{
+                    myArr = []
+                }
+                //console.log(myArr)
+                
+                // homework
+
+                //Add Quantity
+                let cancle = -1;
+                // if(myArr != null){
+                    for(myArray of myArr){
+                        if(myArray.id == item.id){
+                            myArray.qty++;
+                            cancle = 1;
+                        }
+                    }
+                    if(cancle == -1){
+                        myArr.push(item)
+                    }
+                // }else{
+                //     myArr.push(item)
+                // }
+                
+                
+                
+                //JS Object => JSON String
+                let myArrString = JSON.stringify(myArr);
+                //console.log(itemString)
+
+                localStorage.setItem('cart',myArrString)
+                getdata();
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Your Item is added to cart successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                cartNoti();
+            })
+
+             
+
+
+            // Get Data From LS
+            function getdata() { 
+                let cart = localStorage.getItem('cart');
+                if(cart != null){
+                    let myArr = JSON.parse(cart);
+                        let row = ''
+                        let total = 0;
+                        let i = 0;
+                    for([index,item] of myArr.entries()){
+                        total += (item.price*item.qty);
+                        row += `<tr>
+                             <td>
+                                    <button class="remove" data-id="${index}"><i class="fas fa-trash-alt fa-lg" id="trash"></i></button>
+                                    ${++i}
+                                </td>
+                                <td>${item.name}</td>
+                                <td>${item.price} Ks.</td>
+                                <td><input type="number" value="${item.qty}" class="updateqty" data-id="${index}" min="1"></td>
+                                <td>${item.price*item.qty} Ks.</td>
+                            </tr>`
+                        }
+                        row +=`<tr>
+                                    <td colspan = "4">Total Amount</td>
+                                    <td>${total} Ks.</td>
+                                </tr>`
+                    
+                $('tbody').html(row)
+                }else{
+                    $('tbody').html(`<tr><td colspan="5">Your cart is empty!</td></tr>`)
+                }
+            }
+
+            //Increase / Decrease Quantity
+            $('tbody').on('change',".updateqty",function () { 
+                let qty = $(this).val();
+                console.log(qty)
+                let index = $(this).data('id');
+                let cart = localStorage.getItem('cart');
+                let myArr = JSON.parse(cart);
+                myArr[index].qty = qty;
+                //JS Object => JSON String
+                let myArrString = JSON.stringify(myArr);
+                //console.log(itemString)
+
+                localStorage.setItem('cart',myArrString)
+                getdata();
+             }) 
+
+              
+
+            //Remove Function
+
+            $('tbody').on('click',".remove",function () { 
+                let index = $(this).data('id');
+                //console.log(index)
+                let cart = localStorage.getItem('cart');
+                let myArr = JSON.parse(cart);
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        //Delete one row
+                
+                        myArr.splice(index,1);
+                        //JS Object => JSON String
+                        let myArrString = JSON.stringify(myArr);
+                        //console.log(itemString)
+
+                        localStorage.setItem('cart',myArrString)
+                        getdata();
+                        cartNoti();
+                    }
+                })
+                
+                
+             })
+
+             // check out
+             $('.checkout').on('click',function () { 
+                let cart = localStorage.getItem('cart');
+                let myArr = JSON.parse(cart);
+                if(myArr != null){
+                    localStorage.removeItem('cart')
+                    Swal.fire(
+                        'THANK YOU!',
+                        'Your order successfully completed',
+                        'success'
+                    )
+                    getdata();
+                    cartNoti();
+                }
+                
+            })
+
+            // cart noti
+            function cartNoti(){
+                let cart = localStorage.getItem('cart');
+                let myArr = JSON.parse(cart);
+                let no = 0;
+                if(myArr != null){
+                    for(row of myArr){
+                    no++;
+                }
+                $("div#cart_item").text(no);
+                no = 0;
+                }else{
+                    $("div#cart_item").text(0);  
+                }
+            }
+
+            // shop now link
+            $("div.home_text button.shop_now").on("click",function(){
+                $('div#home').slideUp();
+                $('div#shop').slideDown();
+                $('.shopcontent').first().slideDown()
+
+            })
+            cartNoti();
+            getdata();
+            
+        });
+
+        
+       
+    </script>
+</head>
+<body>
+
+    <div class="tab">
+        <ul class="link-wapper">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#cart"><div id="cart_btn"><i class="fas fa-shopping-cart fa-lg"></i><div id="cart_item">0</div></div></a></li>
+        </ul>
+
+        <!-- Home -->
+
+        <div class="content" id="home">
+            <div class="home_grid">
+                <div><img src="images/food.jpeg" alt="food"></div>
+                <div class="home_text">
+                    <h2>Surprise and delight your remote team, friends or yourself with delicious and wholesome snacks!</h2>
+                    <p>Accusantium libero consequatur distinctio nam minima commodi aliquam obcaecati totam vero dignissimo</p>
+                    <button class="shop_now">Shop Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About -->
+
+        <div class="content" id="about">
+            
+            <div class="about_purpose_text">
+                <h1>OURS PURPOSE</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi minima unde rem in veritatis sed, cumque optio dolore. Rerum fugit quisquam sunt consequuntur delectus quia ea quas minus rem illo.</p>
+                <p>Magnam dolores ex explicabo. Numquam quo consequuntur autem! Id temporibus accusantium suscipit, aspernatur aliquid, quae praesentium ipsaMagnam dolores ex explicabo. Numquam quo consequuntur autem! Id temporibus accusantium suscipit, aspernatur aliquid, quae praesentium ipsa</p>
+            </div>
+        
+            <div class="about_us">
+                <div class="about_us_1">
+                    <div class="about_us_color">
+                        <h3>30% Discount</h3>
+                        <h1>Merry Christmas</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum laudantium dolorum qui neque laboriosam quam! Et aliquam, quisquam unde officiis eligend</p>
+                        <p>Eligendi repellat voluptates animi dolores ipsum, consectetur sunt quibusdam</p>
+                        <a class="decoration"  href="#">READ MORE</a>
+                    </div>
+                </div>
+                <div class="about_us_2">
+                    <div class="about_us_color">
+                        <h3>4th September</h3>
+                        <h1>STOCK IN LOCAL</h1>
+                        <p>accusantium aspernatur consequatur sapiente placeat beatae fugiat, vero cum distinctio itaque iste illo odit, amet iusto officiis? Unde, rerum suscipit?</p>
+                        <p>Incidunt aut labore blanditiis ratione laboriosam deleniti quasi eos corrupti.</p>
+                        <a class="decoration" href="#">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+
+        <div class="content" id="contact">
+            <div class="background_color">
+                <h1 class="center">CONTACT</h1>
+                <div class="contact_grid">
+                    <div class="contact_grid_one">
+                        <h2 class="gray"><i class="fas fa-phone" style="color: gold; margin-right: 15px;"></i>PHONE</h2>
+                        <p class="gray"><b>PHONE NO</b>:097-876-653</p>
+                        <p class="gray"><b>FAX</b>:980-864-853</p>
+                    </div>
+                    <div class="contact_grid_two">
+                        <h2 class="gray"><i class="fas fa-envelope" style="color: gold; margin-right: 15px;"></i>EMAIL</h1>
+                            <a href="#" class="gray">contact@gmail.com</a><br><br>
+                            <a href="#" class="gray">Theingi@gmail.com</a>
+                    </div>
+                    <div class="contact_grid_three">
+                        <h2 class="gray"><i class="fas fa-map-marker-alt" style="color: gold; margin-right: 15px;"></i>ADDRESS</h2>
+                        <p class="gray">NO.6,YANGON,MYANMAR</p>
+                    </div>
+                </div>
+        
+                <div>
+                    <div class="contact_border">
+                        <h2 class="contact_border_header gray">FOLLOW US</h2>
+                        <div class="contact_border_icons">
+                            <a class="contact_border_iconone lightgray" href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a class="contact_border_icontwo lightgray" href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a class="contact_border_iconthree lightgray" href="#" title="Instegram"><i class="fab fa-instagram"></i></a>
+                        </div>
+        
+                        <div class="contact_form">
+                            <form action="" class="gray">
+                                <input type="text" name="name" placeholder="Your Name" class="contact_form_size"><br>
+                                <input type="email" name="email" placeholder="Email Address" class="contact_form_size"><br>
+                                <input type="text" name="subject" placeholder="Subject" class="contact_form_size"><br>
+                                <textarea name="message" placeholder="Message" cols="30" rows="10" class="contact_form_size"></textarea><br>
+                                <input type="checkbox" name="" id="agree" class="contact_form_margin">
+                                <label for="agree" class="contact_form_margin">I agree that my submitted data is being collected and saved.</label><br>
+                                <button class="contact_form_button">SEND MESSAGE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop -->
+
+        <div class="content" id="shop" style="height: 1000px;">
+                <ul class="shop-wapper">
+                    <li><a href="#pizza" class="active" id="pizzapage">Pizza</a></li>
+                    <li><a href="#buger">Burger & Sandwish</a></li>
+                    <li><a href="#cake">Cake & Bread</a></li>
+                    <li><a href="#drink">Drinks</a></li>
+                </ul>
+
+                    <div class="shopcontent" id="pizza">
+                        <div class="shop">
+                            <div class="item">
+                                <img src="images/cheese_pizza.jpg" alt="food">
+                                <p>Cheese Pizza</p>
+                                <strong>15000Ks.</strong> <br>
+                                <button class="atc" data-id="1" data-name="Cheese Pizza" data-price="15000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/hawaiian-pizza.jpg" alt="food">
+                                <p>Hawaiian Pizza</p>
+                                <strong>18000Ks.</strong> <br>
+                                <button class="atc" data-id="2" data-name="Hawaiian Pizza" data-price="18000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/BBQ-Chicken-Pizza.jpg" alt="food">
+                                <p>BBQ Chicken Pizza</p>
+                                <strong>15000Ks.</strong>  <br>
+                                <button class="atc" data-id="3" data-name="BBQ Chicken Pizza" data-price="15000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/beef_pizza.jpg" alt="food">
+                                <p>Beef Pizza</p>
+                                <strong>18000Ks.</strong> <br>
+                                <button class="atc" data-id="4" data-name="Beef Pizza" data-price="18000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shopcontent" id="buger">
+                        <div class="shop">
+                            <div class="item">
+                                <img src="images/chicken-burger.jpg" alt="food">
+                                <p>Chicken Burger</p>
+                                <strong>3000Ks.</strong> <br>
+                                <button class="atc" data-id="5" data-name="Chicken Burger" data-price="3000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/beer_buger.jpg" alt="food">
+                                <p>Beef Burger</p>
+                                <strong>3000Ks.</strong> <br>
+                                <button class="atc" data-id="6" data-name="Beef Burger" data-price="3000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/hotdog.jpg" alt="food">
+                                <p>Hot Dog</p>
+                                <strong>1500Ks.</strong>  <br>
+                                <button class="atc" data-id="7" data-name="Hot Dog" data-price="1500"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/sandwich.jpg" alt="food">
+                                <p>Sandwich</p>
+                                <strong>1500Ks.</strong> <br>
+                                <button class="atc" data-id="8" data-name="Sandwich" data-price="1500"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shopcontent" id="cake">
+                        <div class="shop">
+                            <div class="item">
+                                <img src="images/crepe_cake.jpg" alt="food">
+                                <p>Strawberry Crepe Cake</p>
+                                <strong>19000Ks.</strong> <br>
+                                <button class="atc" data-id="9" data-name="Strawberry Crepe Cake" data-price="19000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/Chocolate-Mousse-Cake.jpg" alt="food">
+                                <p>Chocolate Mousse Cake</p>
+                                <strong>20000Ks.</strong> <br>
+                                <button class="atc" data-id="10" data-name="Chocolate Mousse Cake" data-price="20000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/White-Bread.jpg" alt="food">
+                                <p>White Bread</p>
+                                <strong>2500Ks.</strong>  <br>
+                                <button class="atc" data-id="11" data-name="White Bread" data-price="2500"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/multigrain_bread.jpg" alt="food">
+                                <p>Multigrain Bread</p>
+                                <strong>5000Ks.</strong> <br>
+                                <button class="atc" data-id="12" data-name="Multigrain Bread" data-price="5000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shopcontent" id="drink">
+                        <div class="shop">
+                            <div class="item">
+                                <img src="images/latte.jpg" alt="food">
+                                <p>Latte</p>
+                                <strong>2000Ks.</strong> <br>
+                                <button class="atc" data-id="13" data-name="Latte" data-price="2000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/Strawberry-Milkshake.jpg" alt="food">
+                                <p>Strawberry Milkshake</p>
+                                <strong>2000Ks.</strong> <br>
+                                <button class="atc" data-id="14" data-name="Strawberry Milkshake" data-price="2000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/ice_cream.jpg" alt="food">
+                                <p>Ice Cream</p>
+                                <strong>1000Ks.</strong>  <br>
+                                <button class="atc" data-id="15" data-name="Ice Cream" data-price="1000"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <img src="images/Blueberry.jpg" alt="food">
+                                <p>Blueberry Smoothie</p>
+                                <strong>2500Ks.</strong> <br>
+                                <button class="atc" data-id="16" data-name="Blueberry Smoothie" data-price="2500"><i class="fas fa-cart-plus fa-lg" id="addCart"></i>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                
+        </div>
+
+        <div class="content" id="cart">
+            <h3>Cart Section</h3>
+            <table border= "1" style="margin-bottom: 10px;" cellspacing="0" cellpadding= "10" width="100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Sub Total</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                </tbody>
+            </table>
+
+            <button class="checkout">Check Out</button>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
