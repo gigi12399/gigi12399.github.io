@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Design</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+          <a class="navbar-brand fw-bold fs-1 mx-md-0 mx-auto" href="#">m</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Stories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Author</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control rounded-0 rounded-start" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-secondary rounded-0 rounded-end" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header -->
+      <div class="container">
+        <div class="row">
+            <div class="col-12 gy-4 mb-3">
+               <h1 class="fw-bolder">Mediumish</h1>
+               <p>Bootstrap theme, medium style, simple perfect fo bloggers.</p>
+            </div>
+        </div>
+
+        <!-- Featured -->
+        <div class="row gy-2">
+            <div class="col-12">
+                <h4 class="fw-bolder">Featured</h4>
+                <hr>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <div class="row g-0 h-100">
+                      <div class="col-xl-4 col-lg-4">
+                        <img src="images/1.jpg" class="img-fluid rounded-start h-100" alt="...">
+                      </div>
+                      <div class="col-xl-8 col-lg-8">
+                        <div class="card-body">
+                            <h3 class="card-title">We're living some strange times</h3>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="images/face.png" class="img-fluid w-md-50" alt="...">
+                                </div>
+                                <div class="col-8">
+                                    <p class="fs-6 fw-normal mb-0">Steve</p>
+                                    <p class="fs-6 fw-lighter">22 July 2045.6 min read</p>
+                                </div>
+                                <div class="col-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                      </svg>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card mb-3 h-100 gy-3">
+                    <div class="row g-0 h-100">
+                      <div class="col-xl-4 col-lg-4">
+                        <img src="images/2.jpg" class="img-fluid rounded-start h-100" alt="...">
+                      </div>
+                      <div class="col-xl-8 col-lg-8">
+                        <div class="card-body">
+                            <h3 class="card-title">Dreaming of Las Vegas Crazyness</h3>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="images/face.png" class="img-fluid" alt="...">
+                                </div>
+                                <div class="col-8">
+                                    <p class="fs-6 fw-normal mb-0">Mary</p>
+                                    <p class="fs-6 fw-lighter">22 July 2045.6 min read</p>
+                                </div>
+                                <div class="col-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                      </svg>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card mb-3 h-100 gy-3">
+                    <div class="row g-0 h-100">
+                      <div class="col-xl-4 col-lg-4">
+                        <img src="images/3.jpg" class="img-fluid rounded-start h-100" alt="...">
+                      </div>
+                      <div class="col-xl-8 col-lg-8">
+                        <div class="card-body">
+                            <h3 class="card-title">The beauty of this world is in your heart</h3>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="images/face.png" class="img-fluid" alt="...">
+                                </div>
+                                <div class="col-8">
+                                    <p class="fs-6 fw-normal mb-0">Jane</p>
+                                    <p class="fs-6 fw-lighter">22 July 2045.6 min read</p>
+                                </div>
+                                <div class="col-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                      </svg>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card mb-3 h-100 gy-3">
+                    <div class="row g-0 h-100">
+                      <div class="col-xl-4 col-lg-4">
+                        <img src="images/4.jpg" class="img-fluid rounded-start h-100" alt="...">
+                      </div>
+                      <div class="col-xl-8 col-lg-8">
+                        <div class="card-body">
+                            <h3 class="card-title">San Francisco at its best view in all seasons</h3>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="images/face.png" class="img-fluid" alt="...">
+                                </div>
+                                <div class="col-8">
+                                    <p class="fs-6 fw-normal mb-0">Sai</p>
+                                    <p class="fs-6 fw-lighter">22 July 2045.6 min read</p>
+                                </div>
+                                <div class="col-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                      </svg>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <!-- Stories -->
+        <div class="row gy-2">
+            <div class="col-12 mt-4">
+                <h4 class="fw-bolder mt-4">All Stories</h4>
+                <hr>
+            </div>
+            
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <img src="images/5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Autumn doesn't have to be nostalgic, you know?</h3>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-2">
+                                <img src="images/face.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-8 col-8 float-md-start">
+                                <p class="fs-6 fw-normal mb-0">Sai</p>
+                                <p class="fs-6 fw-lighter">22 July 2045. 6 min read</p>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <img src="images/6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Little red dress and a perfect summer</h3>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-2">
+                                <img src="images/face.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-8 col-8 float-md-start">
+                                <p class="fs-6 fw-normal mb-0">Sai</p>
+                                <p class="fs-6 fw-lighter">22 July 2045. 6 min read</p>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <img src="images/7.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">10 Things you should know about choosing your house</h3>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-2">
+                                <img src="images/face.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-8 col-8 float-md-start">
+                                <p class="fs-6 fw-normal mb-0">Sai</p>
+                                <p class="fs-6 fw-lighter">22 July 2045. 6 min read</p>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <img src="images/8.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Best galleries in the world with photos</h3>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-2">
+                                <img src="images/face.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-8 col-8 float-md-start">
+                                <p class="fs-6 fw-normal mb-0">Sai</p>
+                                <p class="fs-6 fw-lighter">22 July 2045. 6 min read</p>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <img src="images/9.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Thinking outside the box can help you prosper</h3>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-2">
+                                <img src="images/face.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-8 col-8 float-md-start">
+                                <p class="fs-6 fw-normal mb-0">Sai</p>
+                                <p class="fs-6 fw-lighter">22 July 2045. 6 min read</p>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card mb-3 h-100">
+                    <img src="images/10.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Visiting the world means learning cultures</h3>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-2">
+                                <img src="images/face.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-8 col-8 float-md-start">
+                                <p class="fs-6 fw-normal mb-0">Sai</p>
+                                <p class="fs-6 fw-lighter">22 July 2045. 6 min read</p>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+            
+            
+    </div> 
+
+    <!-- Footer -->
+    <div class="container my-5">
+        <hr>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <p>Copyright © 2045 Your Website Name</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <p class="float-end">Design & Code by <span class="text-success">WowThemes</span> </p>
+            </div>
+        </div>
+    </div>
+        
+        
+    
+</body>
+</html>
