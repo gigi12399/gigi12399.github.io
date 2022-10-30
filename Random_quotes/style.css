@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/wood.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+div {
+    border-radius: 40px;
+    background-color: #f3f3f3;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 50px;
+    box-shadow: 15px 15px 15px;
+}
+
+button#new {
+    float: right;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px;
+    padding: 5px;
+}
+h1{
+    text-align: center;
+    margin-top: 130px;
+    font-size: 50px;
+    text-shadow: 3px 3px 5px;
+}
+
+p{
+    padding-left: 400px;
+}
