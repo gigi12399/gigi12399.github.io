@@ -27,25 +27,24 @@ p#id {
     display: none;
 }
 
-form label {
-    font-size: 20px;
+label.form-label {
+    /* font-size: 20px; */
     text-shadow: 1px 1px 5px;
 }
 
-form#myform input[type="text"] {
-    padding: 10px;
-    width: 100%;
-}
 
-form#myform input {
-    margin-bottom: 15px;
+/* form#myform input[type="text"] {
+    width: 100%;
+} */
+
+input.form-control {
+    /* margin-bottom: 15px; */
     box-shadow: 10px 10px 10px;
 }
 
-input[type="submit"] {
-    margin-left: 250px;
-    padding: 10px;
+button[type="submit"] {
     border-radius: 5px;
+    box-shadow: 10px 10px 10px black;
 }
 
 img#img,
@@ -55,12 +54,7 @@ img#imgmeme {
     width: 100%;
 }
 
-a#download {
-    text-decoration: none;
-    font-size: 20px;
+a.btn {
     display: none;
-    border: 1px solid black;
-    background-color: white;
     box-shadow: 10px 10px 10px black;
-    padding: 10px;
 }
