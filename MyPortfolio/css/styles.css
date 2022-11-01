@@ -11376,10 +11376,10 @@ div.card_shadow {
 }
 
 .bg-custome {
-    background-color: #004d66;
+    background-color: #004d66 !important;
 }
 
 .btn-custome {
-    background-color: #004d66;
-    color: white;
+    background-color: #004d66 !important;
+    color: white !important;
 }
