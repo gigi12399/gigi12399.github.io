@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -7,34 +7,34 @@
     src: url(fonts/Shizuru-Regular.ttf);
 }
 
-body{
-    background-color: #e0c9a6;
+body {
+    background-color: #e0c9a6 !important;
 }
 
-h1{
+h1 {
     font-family: 'Shizuru', cursive;
     font-size: 50px;
     text-align: center;
     text-shadow: 3px 3px 5px;
 }
 
-div#grid{
+div#grid {
     display: grid;
     grid-template-columns: auto auto auto;
 }
 
-p#id{
+p#id {
     display: none;
 }
 
-form label{
+form label {
     font-size: 20px;
     text-shadow: 1px 1px 5px;
 }
 
-form#myform input[type = "text"] {
+form#myform input[type="text"] {
     padding: 10px;
-    width: 300px;
+    width: 100%;
 }
 
 form#myform input {
@@ -48,12 +48,14 @@ input[type="submit"] {
     border-radius: 5px;
 }
 
-img#img, img#imgmeme{
+img#img,
+img#imgmeme {
     box-shadow: 15px 15px 15px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
-a#download{
+a#download {
     text-decoration: none;
     font-size: 20px;
     display: none;

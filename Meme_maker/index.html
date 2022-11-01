@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pushster&family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
+
 <body>
     <h1>MAKE YOUR OWN MEMES</h1>
-    <div id ="grid">
-        <div id="image"></div>
-        <p id="id"></p>
-        <div id="container">
-            <form action="#" id = "myform">
+    <div class="row mt-5">
+        <div class="col-4">
+            <div id="image"></div>
+            <p id="id"></p>
+        </div>
+        <div class="col-4">
+            <form action="#" id="myform">
                 <label for="text0">Top Text</label> <br><br>
                 <input type="text" name="text0" id="text0" placeholder="Enter your meme"> <br>
                 <label for="text1">Bottom Text</label> <br><br>
@@ -25,15 +30,21 @@
                 <input type="submit" value="Post">
             </form>
         </div>
-        <div>
-            <div id="meme"></div>
-            <a href="" id="download">DOWNLOAD</a>
+        <div class="col-4">
+            <div>
+                <div id="meme"></div>
+                <a href="" id="download">DOWNLOAD</a>
+            </div>
         </div>
-        
     </div>
-    
-    
 
+
+
+
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

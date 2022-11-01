@@ -1,57 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                <th colspan="4">
-                    <div class="display">
-                        <div class="previous"></div>
-                        <div class="current"></div>
-                    </div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr >
-                <td><button class="operator">+</button></td>
-                <td><button class="operator">-</button></td>
-                <td><button class="operator">x</button></td>
-                <td><button class="operator">÷</button></td>
-            </tr>
-            <tr >
-                <td><button class="number">7</button></td>
-                <td><button class="number">8</button></td>
-                <td><button class="number">9</button></td>
-                <td rowspan="3"><button class="equal">=</button></td>
-            </tr>
-            <tr >
-                <td><button class="number">4</button></td>
-                <td><button class="number">5</button></td>
-                <td><button class="number">6</button></td>
-            </tr>
-            <tr >
-                <td><button class="number">1</button></td>
-                <td><button class="number">2</button></td>
-                <td><button class="number">3</button></td>
-            </tr>
-            <tr >
-                <td><button class="number">0</button></td>
-                <td><button class="number">.</button></td>
-                <td><button class="allClear">AC</button></td>
-                <td><button class="delete">DEL</button></td>
-            </tr>
-        </tbody>
-    </table>
 
-    
+<body>
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <div class="px-3 calculator_border">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <div class="display">
+                            <h3 class="previous"></h3>
+                            <h3 class="current"></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 text-center">
+                        <button class="operator">+</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="operator">-</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="operator">x</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="operator">÷</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 text-center">
+                        <button class="number mb-3">7</button>
+                        <button class="number mb-3">4</button>
+                        <button class="number mb-3">1</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="number mb-3">8</button>
+                        <button class="number mb-3">5</button>
+                        <button class="number mb-3">2</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="number mb-3">9</button>
+                        <button class="number mb-3">6</button>
+                        <button class="number mb-3">3</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="equal mb-3">=</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 text-center">
+                        <button class="number">0</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="number">.</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="allClear">AC</button>
+                    </div>
+                    <div class="col-3 text-center">
+                        <button class="delete">DEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
